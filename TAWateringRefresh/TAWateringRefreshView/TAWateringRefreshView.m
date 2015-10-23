@@ -101,15 +101,29 @@
     
     if (scrollView.contentOffset.y <= - 65.0f && !_loading) {
         
-//        if ([_delegate respondsToSelector:@selector(egoRefreshTableHeaderDidTriggerRefresh:)]) {
-//            [_delegate egoRefreshTableHeaderDidTriggerRefresh:self];
-//        }
+        if ([_delegate respondsToSelector:@selector(wateringRefreshStartRefresh:)]) {
+            [_delegate wateringRefreshStartRefresh:self];
+        }
         self.state = TAWateringRefreshStateLoading;
-        [UIView beginAnimations:nil context:NULL];
-        [UIView setAnimationDuration:0.2];
-        scrollView.contentInset = UIEdgeInsetsMake(60.0f, 0.0f, 0.0f, 0.0f);
-        [UIView commitAnimations];
+        CGPoint contentOffset = scrollView.contentOffset;
+
+        [UIView animateWithDuration:0.2 animations:^
+         {
+             scrollView.contentInset = UIEdgeInsetsMake(60.0f, 0.0f, 0.0f, 0.0f);
+             scrollView.contentOffset = contentOffset;
+
+         }];
         
     }
+}
+
+- (void)endRefresh:(UIScrollView*) scrollView {
+    [UIView animateWithDuration:0.2 animations:^
+     {
+         scrollView.contentInset = UIEdgeInsetsMake(0.0f, 0.0f, 0.0f, 0.0f);
+         
+     }];
+    
+    self.state = TAWateringRefreshStateNormal;
 }
 @end

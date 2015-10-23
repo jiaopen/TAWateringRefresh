@@ -14,12 +14,22 @@ typedef enum{
     TAWateringRefreshStateLoading,
 } TAWateringRefreshState;
 
+@protocol TAWateringRefreshDelegate;
 
 @interface TAWateringRefreshView : UIView
 
 - (void)scrollViewDidScroll:(UIScrollView*) scrollView;
 - (void)scrollViewDidEndDraging:(UIScrollView*) scrollView;
-- (void)endRefresh;
+- (void)endRefresh:(UIScrollView*) scrollView;
 - (void)endRefreshWithStatus:(NSString*) status;
+@property (nonatomic, assign)   id<TAWateringRefreshDelegate>   delegate;
+
+@end
+
+@protocol TAWateringRefreshDelegate <NSObject>
+
+@optional
+
+- (void)wateringRefreshStartRefresh:(TAWateringRefreshView*)refreshView;
 
 @end

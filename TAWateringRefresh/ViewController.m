@@ -9,7 +9,7 @@
 #import "ViewController.h"
 #import "TAWateringRefreshView.h"
 
-@interface ViewController ()
+@interface ViewController () <TAWateringRefreshDelegate>
 {
     TAWateringRefreshView *_refreshView;
 }
@@ -19,8 +19,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    self.navigationController.navigationBar.translucent = NO;
+    self.automaticallyAdjustsScrollViewInsets = NO;
     _refreshView = [[TAWateringRefreshView alloc] init];
+    _refreshView.delegate = self;
     [self.tableView addSubview:_refreshView];
 }
 
@@ -34,6 +36,12 @@
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
 {
     [_refreshView scrollViewDidEndDraging:scrollView];
+}
+
+-(void)wateringRefreshStartRefresh:(TAWateringRefreshView *)refreshView {
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [_refreshView endRefresh:self.tableView];
+    });
 }
 
 @end
