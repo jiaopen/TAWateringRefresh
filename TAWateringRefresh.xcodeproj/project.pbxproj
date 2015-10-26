@@ -10,6 +10,8 @@
 		BF6600071BDA0DDC000B1036 /* TAWateringRefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6600061BDA0DDC000B1036 /* TAWateringRefreshView.m */; settings = {ASSET_TAGS = (); }; };
 		BF66000B1BDA224E000B1036 /* TAWateringRefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF66000A1BDA224E000B1036 /* TAWateringRefreshView.xib */; settings = {ASSET_TAGS = (); }; };
 		BF66000E1BDDC561000B1036 /* TAWaveView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF66000D1BDDC561000B1036 /* TAWaveView.m */; settings = {ASSET_TAGS = (); }; };
+		BF6600111BDDFCD8000B1036 /* watering_refresh_mask@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF66000F1BDDFCD8000B1036 /* watering_refresh_mask@2x.png */; settings = {ASSET_TAGS = (); }; };
+		BF6600121BDDFCD8000B1036 /* watering_refresh_mask@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF6600101BDDFCD8000B1036 /* watering_refresh_mask@3x.png */; settings = {ASSET_TAGS = (); }; };
 		BF66FFE01BDA08D4000B1036 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BF66FFDF1BDA08D4000B1036 /* main.m */; };
 		BF66FFE31BDA08D4000B1036 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BF66FFE21BDA08D4000B1036 /* AppDelegate.m */; };
 		BF66FFE61BDA08D4000B1036 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF66FFE51BDA08D4000B1036 /* ViewController.m */; };
@@ -24,6 +26,8 @@
 		BF66000A1BDA224E000B1036 /* TAWateringRefreshView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TAWateringRefreshView.xib; sourceTree = "<group>"; };
 		BF66000C1BDDC561000B1036 /* TAWaveView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAWaveView.h; sourceTree = "<group>"; };
 		BF66000D1BDDC561000B1036 /* TAWaveView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAWaveView.m; sourceTree = "<group>"; };
+		BF66000F1BDDFCD8000B1036 /* watering_refresh_mask@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "watering_refresh_mask@2x.png"; sourceTree = "<group>"; };
+		BF6600101BDDFCD8000B1036 /* watering_refresh_mask@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "watering_refresh_mask@3x.png"; sourceTree = "<group>"; };
 		BF66FFDB1BDA08D4000B1036 /* TAWateringRefresh.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TAWateringRefresh.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF66FFDF1BDA08D4000B1036 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BF66FFE11BDA08D4000B1036 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -91,6 +95,8 @@
 		BF66FFF51BDA0BEB000B1036 /* TAWateringRefreshView */ = {
 			isa = PBXGroup;
 			children = (
+				BF66000F1BDDFCD8000B1036 /* watering_refresh_mask@2x.png */,
+				BF6600101BDDFCD8000B1036 /* watering_refresh_mask@3x.png */,
 				BF6600051BDA0DDC000B1036 /* TAWateringRefreshView.h */,
 				BF6600061BDA0DDC000B1036 /* TAWateringRefreshView.m */,
 				BF66000A1BDA224E000B1036 /* TAWateringRefreshView.xib */,
@@ -160,6 +166,8 @@
 				BF66000B1BDA224E000B1036 /* TAWateringRefreshView.xib in Resources */,
 				BF66FFEE1BDA08D4000B1036 /* LaunchScreen.storyboard in Resources */,
 				BF66FFEB1BDA08D4000B1036 /* Assets.xcassets in Resources */,
+				BF6600121BDDFCD8000B1036 /* watering_refresh_mask@3x.png in Resources */,
+				BF6600111BDDFCD8000B1036 /* watering_refresh_mask@2x.png in Resources */,
 				BF66FFE91BDA08D4000B1036 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

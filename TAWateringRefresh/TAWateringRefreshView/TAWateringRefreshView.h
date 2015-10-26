@@ -21,7 +21,6 @@ typedef enum{
 - (void)scrollViewDidScroll:(UIScrollView*) scrollView;
 - (void)scrollViewDidEndDraging:(UIScrollView*) scrollView;
 - (void)endRefresh:(UIScrollView*) scrollView;
-- (void)endRefreshWithStatus:(NSString*) status;
 + (instancetype)refreshView;
 
 @property (nonatomic, assign)   id<TAWateringRefreshDelegate>   delegate;
