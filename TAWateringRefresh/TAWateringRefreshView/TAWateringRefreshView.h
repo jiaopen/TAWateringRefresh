@@ -9,9 +9,9 @@
 #import <UIKit/UIKit.h>
 
 typedef enum{
-    TAWateringRefreshStatePulling = 0,
-    TAWateringRefreshStateNormal,
-    TAWateringRefreshStateLoading,
+    TAWateringRefreshStatePulling = 1,
+    TAWateringRefreshStateNormal = 0,
+    TAWateringRefreshStateLoading = 2,
 } TAWateringRefreshState;
 
 @protocol TAWateringRefreshDelegate;
@@ -22,6 +22,8 @@ typedef enum{
 - (void)scrollViewDidEndDraging:(UIScrollView*) scrollView;
 - (void)endRefresh:(UIScrollView*) scrollView;
 - (void)endRefreshWithStatus:(NSString*) status;
++ (instancetype)refreshView;
+
 @property (nonatomic, assign)   id<TAWateringRefreshDelegate>   delegate;
 
 @end

@@ -21,7 +21,7 @@
     [super viewDidLoad];
     self.navigationController.navigationBar.translucent = NO;
     self.automaticallyAdjustsScrollViewInsets = NO;
-    _refreshView = [[TAWateringRefreshView alloc] init];
+    _refreshView = [TAWateringRefreshView refreshView];
     _refreshView.delegate = self;
     [self.tableView addSubview:_refreshView];
 }
