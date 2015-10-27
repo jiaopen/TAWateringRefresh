@@ -118,8 +118,9 @@ NSString * viewMoveKey = @"waveMoveAnimation";
 - (void)endRefresh:(UIScrollView*) scrollView {
     [UIView animateWithDuration:0.2 animations:^
      {
-         scrollView.contentInset = UIEdgeInsetsMake(0.0f, 0.0f, 0.0f, 0.0f);
-         
+         UIEdgeInsets edgeInsets = scrollView.contentInset;
+         edgeInsets.top = 0;
+         scrollView.contentInset = edgeInsets;
      } completion:^(BOOL finished) {
          [_waveView stopWave];
      }];

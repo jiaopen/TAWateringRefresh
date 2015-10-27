@@ -19,6 +19,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         self.layer.masksToBounds  = YES;
+        self.backgroundColor = [UIColor grayColor];
         _waveColor = [UIColor colorWithRed:0.278 green:0.841 blue:1.000 alpha:1.000];
         _speed = 5.0f;
         _amplitude = 5.0f;
