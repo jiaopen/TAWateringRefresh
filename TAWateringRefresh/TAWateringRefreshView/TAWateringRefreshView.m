@@ -21,7 +21,6 @@ NSString * viewMoveKey = @"waveMoveAnimation";
 @property (nonatomic, strong) TAWaveView* waveView;
 @property (nonatomic, strong) UIImageView* maskImageView;
 
-
 @end
 
 @implementation TAWateringRefreshView
@@ -66,7 +65,6 @@ NSString * viewMoveKey = @"waveMoveAnimation";
 }
 
 - (void)scrollViewDidScroll:(UIScrollView*) scrollView{
-   
     if (_state == TAWateringRefreshStateLoading) {
 //        CGFloat offset = MAX(scrollView.contentOffset.y * -1, 0);
 //        offset = MIN(offset, WAVE_HEIGHT + 2*MARGIN_HEIGHT);
@@ -74,7 +72,6 @@ NSString * viewMoveKey = @"waveMoveAnimation";
 //        scrollView.contentInset = UIEdgeInsetsMake(offset, 0.0f, 0.0f, 0.0f);
         
     } else if (scrollView.isDragging) {
-        
         BOOL _loading = NO;
         [_waveView startWave];
         CGFloat offset = MAX(scrollView.contentOffset.y * -1, 0);
@@ -93,12 +90,7 @@ NSString * viewMoveKey = @"waveMoveAnimation";
 }
 
 - (void)scrollViewDidEndDraging:(UIScrollView*) scrollView {
-    
-    BOOL _loading = NO;
-
-    
-    if (scrollView.contentOffset.y <= - (WAVE_HEIGHT + 2*MARGIN_HEIGHT) && !_loading) {
-        
+    if (scrollView.contentOffset.y <= -(WAVE_HEIGHT + 2*MARGIN_HEIGHT) && _state != TAWateringRefreshStateLoading) {
         if ([_delegate respondsToSelector:@selector(wateringRefreshStartRefresh:)]) {
             [_delegate wateringRefreshStartRefresh:self];
         }
@@ -116,8 +108,7 @@ NSString * viewMoveKey = @"waveMoveAnimation";
 }
 
 - (void)endRefresh:(UIScrollView*) scrollView {
-    [UIView animateWithDuration:0.2 animations:^
-     {
+    [UIView animateWithDuration:0.2 animations:^{
          UIEdgeInsets edgeInsets = scrollView.contentInset;
          edgeInsets.top = 0;
          scrollView.contentInset = edgeInsets;
