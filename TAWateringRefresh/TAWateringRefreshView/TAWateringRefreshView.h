@@ -24,6 +24,7 @@ typedef enum{
 + (instancetype)refreshView;
 
 @property (nonatomic, assign)   id<TAWateringRefreshDelegate>   delegate;
+@property (nonatomic, strong) UIImage* maskImage;
 
 @end
 

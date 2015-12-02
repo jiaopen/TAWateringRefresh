@@ -19,7 +19,6 @@ NSString * viewMoveKey = @"waveMoveAnimation";
 
 @property (nonatomic, assign) TAWateringRefreshState state;
 @property (nonatomic, strong) TAWaveView* waveView;
-@property (nonatomic, strong) UIImageView* maskImageView;
 
 @end
 
@@ -41,15 +40,19 @@ NSString * viewMoveKey = @"waveMoveAnimation";
         _waveView.frequency = 1;
         _waveView.waveWidth = 50;
         _waveView.amplitude = 3;
+       
         [self addSubview:_waveView];
-        
-        _maskImageView = [[UIImageView alloc] initWithFrame:_waveView.frame];
-        _maskImageView.image = [UIImage imageNamed:@"watering_refresh_mask"];
-        [self addSubview:_maskImageView];
+       
     }
     return self;
 }
 
+-(void)setMaskImage:(UIImage *)maskImage{
+    CALayer* maskLayer = [CALayer layer];
+    maskLayer.frame = _waveView.bounds;
+    maskLayer.contents = (__bridge id _Nullable)maskImage.CGImage;
+    _waveView.layer.mask = maskLayer;
+}
 
 - (void)setState:(TAWateringRefreshState)state{
     

@@ -23,6 +23,7 @@
     self.automaticallyAdjustsScrollViewInsets = NO;
     _refreshView = [TAWateringRefreshView refreshView];
     _refreshView.delegate = self;
+    _refreshView.maskImage = [UIImage imageNamed:@"watering_refresh_mask"];
     [self.tableView addSubview:_refreshView];
 }
 
